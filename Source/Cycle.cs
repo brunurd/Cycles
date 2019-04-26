@@ -106,7 +106,7 @@ namespace Cycles
                 result.Add($"{field.Name}:{field.GetValue(data)}");
             }
 
-            return $"{string.Join(",\n", result)}";
+            return string.Join("\n", result);
         }
 
         /// <summary>
