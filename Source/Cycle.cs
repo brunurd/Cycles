@@ -32,7 +32,7 @@ namespace Cycles
         /// <param name="state">The state to set.</param>
         protected void SetState(TState state)
         {
-            base.SetState(state, default);
+            base.SetState(state, default(NoType));
         }
     }
 
