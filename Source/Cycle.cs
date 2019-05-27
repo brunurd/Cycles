@@ -23,7 +23,9 @@ namespace Cycles
         /// <param name="callback">The event callback to execute on set this state.</param>
         protected void AddState(TState state, Action callback)
         {
-            base.AddState(state, _ => { callback(); });
+            base.AddState(state, _ => {
+                callback?.Invoke();
+            });
         }
 
         /// <summary>
@@ -32,7 +34,7 @@ namespace Cycles
         /// <param name="state">The state to set.</param>
         protected void SetState(TState state)
         {
-            base.SetState(state, default(NoType));
+            base.SetState(state, default);
         }
     }
 
@@ -48,14 +50,6 @@ namespace Cycles
         /// The state events list to store all events in the cycle.
         /// </summary>
         private List<StateEvent> events;
-
-        /// <summary>
-        /// A debug info data with state and data.
-        /// </summary>
-        private DebugInfo debugInfo;
-
-        /// <inheritdoc />
-        public DebugInfo DebugInfo => debugInfo;
 
         /// <summary>
         /// Private field to activate the cycle.
@@ -87,26 +81,7 @@ namespace Cycles
         public Cycle()
         {
             events = new List<StateEvent>();
-            debugInfo = new DebugInfo();
             isActive = true;
-        }
-
-        /// <summary>
-        /// Turn the data into a string.
-        /// </summary>
-        /// <param name="data">The data.</param>
-        /// <returns>The data as string.</returns>
-        private string GetValues(TData data)
-        {
-            var fields = typeof(TData).GetFields();
-            var result = new List<string>();
-
-            foreach (var field in fields)
-            {
-                result.Add($"{field.Name}:{field.GetValue(data)}");
-            }
-
-            return string.Join("\n", result);
         }
 
         /// <summary>
@@ -157,8 +132,13 @@ namespace Cycles
                 if (e.state.Equals(state))
                 {
                     CurrentState = e.state;
-                    debugInfo.state = CurrentState.ToString();
-                    debugInfo.data = GetValues(data);
+
+                    Middlewares.MiddlewareCall(new DebugInfo
+                    {
+                        cycleName = GetType().ToString(),
+                        state = CurrentState.ToString(), data = data
+                    });
+
                     e.callback?.Invoke(data);
                     return;
                 }

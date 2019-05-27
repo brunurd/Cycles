@@ -8,11 +8,6 @@ namespace Cycles
     public interface ICycle
     {
         /// <summary>
-        /// Return current info of the cycle.
-        /// </summary>
-        DebugInfo DebugInfo { get; }
-
-        /// <summary>
         /// Get if the cycle is active.
         /// </summary>
         bool IsActive { get; }
