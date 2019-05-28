@@ -28,7 +28,7 @@ My intention with Cycles is turn things easy during the development and in the s
 - Must have a state type.
 - Every state of the Cycle must have a function.
 - Every Cycle with a data type has a data object as input in the state events.
-- A data must be related to just one Cycle.
+- A data type must be related to just one Cycle.
 
 ---
 
