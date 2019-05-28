@@ -136,7 +136,9 @@ namespace Cycles
                     Middlewares.MiddlewareCall(new DebugInfo
                     {
                         cycleName = GetType().ToString(),
-                        state = CurrentState.ToString(), data = data
+                        state = CurrentState.ToString(),
+                        dateTime = DateTime.Now.ToString("G"),
+                        data = data
                     });
 
                     e.callback?.Invoke(data);
