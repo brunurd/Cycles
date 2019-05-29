@@ -5,12 +5,24 @@ License: [MIT](LICENSE)
 
 ---
 
-## What is a Cycle?
+## Core Concept
 
-A generic FSM class:
+A FSM where you add states each one with a callback, and this callback has a data type as parameter.  
+
+
+And when you set the state execute the callback sending the data.  
+
+
+Here a illustrative code snippet:
+
 ```C#
-Cycle<StateType, DataType>
+AddState(/* pass state here... */, (data) => { 
+    // Do something with the data here...
+});
+
+SetState(/* pass state here... */, /* pass data here... */);
 ```
+
 ---
 
 ## Why?
@@ -18,25 +30,19 @@ Cycle<StateType, DataType>
 OOP (Object Oriented Paradigm) can be painful if you lose the control of the data mutation and of the order which things happen.  
 
 
-My intention with Cycles is turn things easy during the development and in the support of my applications by turning the code more legible and debuggable.
+My intention with Cycles is turn things easy during the development and in the support of my applications by turning the code more legible and debuggable.  
+
+A library for this is not really necessary, but it's help to set a implementation pattern.  
 
 ---
 
 ## Rules
 
 - Don't create fields or properties in a Cycle.
-- Must have a state type.
-- Every state of the Cycle must have a function.
+- Every Cycle must have a state type.
+- Every state of the Cycle must have a callback.
 - Every Cycle with a data type has a data object as input in the state events.
-- A data must be related to just one Cycle.
-
----
-
-## Inspirations
-
-- [AWS Step Functions](https://aws.amazon.com/step-functions/)
-- [Reactjs](https://reactjs.org/)
-- [Redux](https://redux.js.org/)
+- A data type must be related to just one Cycle.
 
 ---
 
