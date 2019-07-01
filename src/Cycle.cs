@@ -145,6 +145,9 @@ namespace Cycles
                     return;
                 }
             }
+
+            AddState(state, null);
+            SetState(state, data);
         }
 
         /// <inheritdoc />

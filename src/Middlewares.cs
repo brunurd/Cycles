@@ -7,13 +7,19 @@ namespace Cycles
         /// <summary>
         /// Middleware's events call.
         /// </summary>
-        private static event Action<DebugInfo> middlewares;
+        private static event CycleAction middlewares;
+
+        /// <summary>
+        /// The delegate action type.
+        /// </summary>
+        /// <param name="info">The debug info structure.</param>
+        public delegate void CycleAction(DebugInfo info);
 
         /// <summary>
         /// Subscribe to the middleware's events.
         /// </summary>
         /// <param name="action">The debug info event.</param>
-        public static void AddListener(Action<DebugInfo> action)
+        public static void AddListener(CycleAction action)
         {
             middlewares += action;
         }
@@ -22,7 +28,7 @@ namespace Cycles
         /// Unsubscribe to the middleware's events.
         /// </summary>
         /// <param name="action">The debug info event.</param>
-        public static void RemoveListener(Action<DebugInfo> action)
+        public static void RemoveListener(CycleAction action)
         {
             middlewares -= action;
         }
