@@ -1,5 +1,3 @@
-using System;
-
 namespace Cycles
 {
     public static class Middlewares
