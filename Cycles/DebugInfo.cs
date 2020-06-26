@@ -9,6 +9,7 @@ namespace Cycles
     public struct DebugInfo
     {
         public string cycleName;
+        public string cycleShortName;
         public string dateTime;
         public string state;
         public object data;

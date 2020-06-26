@@ -10,6 +10,7 @@
     <Company>lavaleak</Company>
     <NuspecFile>../Cycles.nuspec</NuspecFile>
     <Copyright>Copyright 2019 Bruno Araujo bruno@lavaleakgames.com</Copyright>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
 
 </Project>

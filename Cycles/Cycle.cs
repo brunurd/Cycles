@@ -135,7 +135,8 @@ namespace Cycles
 
                     Middlewares.MiddlewareCall(new DebugInfo
                     {
-                        cycleName = GetType().ToString(),
+                        cycleName = GetType().FullName,
+                        cycleShortName = GetType().Name,
                         state = CurrentState.ToString(),
                         dateTime = DateTime.Now.ToString("G"),
                         data = data
