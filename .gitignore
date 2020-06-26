@@ -350,3 +350,6 @@ MigrationBackup/
 
 # VsCode
 .vscode/
+
+# macOS
+.DS_Store
