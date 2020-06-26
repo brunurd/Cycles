@@ -1,7 +1,11 @@
 # Cycles
-A strict FSM (Finite-State Machine) architecture implementation.
+![Nuget](https://img.shields.io/nuget/v/cycles)
+![C# Version](https://img.shields.io/badge/C%23-7.3-621ee5)
+![Framework Version](https://img.shields.io/badge/framework-netstandard2.0-621ee5)
+![.NETFramework Version](https://img.shields.io/badge/.NET_Framework-4.6.1-621ee5)
+![GitHub](https://img.shields.io/github/license/brunurd/cycles)  
 
-License: [MIT](LICENSE)
+A strict FSM (Finite-State Machine) architecture implementation.
 
 ---
 

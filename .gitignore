@@ -347,3 +347,6 @@ MigrationBackup/
 
 # JetBrains
 .idea/
+
+# VsCode
+.vscode/
