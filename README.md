@@ -40,13 +40,11 @@ A library for this is not really necessary, but it's help to set a implementatio
 
 ---
 
-## Rules
+## Tips
 
-- Don't create fields or properties in a Cycle.
-- Every Cycle must have a state type.
-- Every state of the Cycle must have a callback.
+- Avoid to create fields or properties to store data in a Cycle.
+- Every Cycle must have at least a state type and a callback.
 - Every Cycle with a data type has a data object as input in the state events.
-- A data type must be related to just one Cycle.
 
 ---
 

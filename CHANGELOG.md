@@ -6,12 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [1.1.0] - 2020-06-25
+## [1.0.2] - 2020-06-26
 
 ### Added
 
-- `Cycles.Test` project with the old `HelloWorld` example, now using assertion tests.
+- `Cycles.Test` project with `Cycles` library tests, include the old `HelloWorld` example.
 - `CHANGELOG.md` file.
+- Nuget tags on the `Cycles.csproj`.
 
 ### Changed
 
@@ -20,3 +21,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Removed
 
 - Examples folder with the `Hello World` example.
+- `Cycles.nuspec` file.
